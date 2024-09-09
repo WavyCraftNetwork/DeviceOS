@@ -7,6 +7,7 @@ namespace wavycraft\deviceos;
 use pocketmine\plugin\PluginBase;
 
 use wavycraft\deviceos\command\CheckOSCommand;
+use wavycraft\deviceos\event\EventListener;
 
 class DeviceOS extends PluginBase {
 
@@ -18,7 +19,7 @@ class DeviceOS extends PluginBase {
 
     protected function onEnable() : void{
         $this->getServer()->getCommandMap()->register("DeviceOS", new CheckOSCommand());
-                $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
+        $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
     }
 
     public static function getInstance() : self{
