@@ -21,7 +21,7 @@ class CheckOSCommand extends Command {
         $this->playerManager = PlayerManager::getInstance();
     }
 
-    public function execute(CommandSender $sender, string $label, array $args): bool {
+    public function execute(CommandSender $sender, string $label, array $args) : bool{
         if (!$this->testPermission($sender)) {
             return false;
         }
